@@ -12,18 +12,12 @@ use Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery;
 
 class ProductAlternativeDataImportHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function ensureDatabaseTableIsEmpty(): void
     {
         $query = $this->getProductAlternativeQuery();
         $query->find()->delete();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableContainsData(): void
     {
         $query = $this->getProductAlternativeQuery();
@@ -34,9 +28,6 @@ class ProductAlternativeDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery
-     */
     protected function getProductAlternativeQuery(): SpyProductAlternativeQuery
     {
         return SpyProductAlternativeQuery::create();

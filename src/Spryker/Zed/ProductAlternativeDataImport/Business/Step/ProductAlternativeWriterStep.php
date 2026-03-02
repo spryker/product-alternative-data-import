@@ -23,11 +23,6 @@ class ProductAlternativeWriterStep extends PublishAwareStep implements DataImpor
      */
     protected const PRODUCT_ALTERNATIVE_PUBLISH = 'ProductAlternative.product_alternative.publish';
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $productAlternativeQuery = SpyProductAlternativeQuery::create()
@@ -42,12 +37,6 @@ class ProductAlternativeWriterStep extends PublishAwareStep implements DataImpor
         }
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     * @param \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery $productAlternativeQuery
-     *
-     * @return void
-     */
     protected function saveConcreteAlternative(DataSetInterface $dataSet, SpyProductAlternativeQuery $productAlternativeQuery): void
     {
         $productAlternativeEntity = $productAlternativeQuery->filterByFkProductConcreteAlternative(
@@ -75,12 +64,6 @@ class ProductAlternativeWriterStep extends PublishAwareStep implements DataImpor
         );
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     * @param \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery $productAlternativeQuery
-     *
-     * @return void
-     */
     protected function saveAbstractAlternative(DataSetInterface $dataSet, SpyProductAlternativeQuery $productAlternativeQuery): void
     {
         $productAlternativeEntity = $productAlternativeQuery->filterByFkProductAbstractAlternative(

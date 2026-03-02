@@ -22,11 +22,6 @@ use Spryker\Zed\ProductAlternativeDataImport\Business\Step\ProductSkuToProductId
  */
 class ProductAlternativeDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getProductAlternativeDataImport(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -49,41 +44,26 @@ class ProductAlternativeDataImportBusinessFactory extends DataImportBusinessFact
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createProductAlternativeDataImportWriterStep(): DataImportStepInterface
     {
         return new ProductAlternativeWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createAlternativeProductConcreteSkuToProductIdStep(): DataImportStepInterface
     {
         return new AlternativeProductConcreteSkuToProductIdStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createAlternativeProductAbstractSkuToProductIdStep(): DataImportStepInterface
     {
         return new AlternativeProductAbstractSkuToProductIdStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createProductSkuToProductIdStep(): DataImportStepInterface
     {
         return new ProductSkuToProductIdStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createDataValidationStep(): DataImportStepInterface
     {
         return new DataValidationStep();

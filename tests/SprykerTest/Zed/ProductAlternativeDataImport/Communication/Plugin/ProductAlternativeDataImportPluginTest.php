@@ -38,9 +38,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
      */
     protected static $neededDataAdded = false;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,9 +73,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsProductAlternative(): void
     {
         // Arrange
@@ -95,9 +89,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenProductNotFound(): void
     {
         // Arrange
@@ -115,9 +106,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         $productAlternativeDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenProductHasNeitherConcreteNorAbstractAlternatives(): void
     {
         // Arrange
@@ -135,9 +123,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         $productAlternativeDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenProductHasBothConcreteAndAbstractAlternatives(): void
     {
         // Arrange
@@ -155,9 +140,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         $productAlternativeDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Assert
@@ -169,11 +151,6 @@ class ProductAlternativeDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @param string $file
-     *
-     * @return \Generated\Shared\Transfer\DataImporterConfigurationTransfer
-     */
     protected function getDataImportConfigurationTransfer(string $file): DataImporterConfigurationTransfer
     {
         $dataImporterReaderConfigurationTransfer = new DataImporterReaderConfigurationTransfer();
